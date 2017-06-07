@@ -165,7 +165,6 @@ services:
         - ${CADDY_HOST_LOG_PATH}:/var/log/caddy
         - ${DATA_SAVE_PATH}:/root/.caddy
       ports:
-        - "${CADDY_HOST_HTTP_PORT}:80"
         - "${CADDY_HOST_HTTPS_PORT}:443"
       depends_on:
         - php-fpm
@@ -189,13 +188,13 @@ services:
 
 ### Mailhog Container #########################################
 
-    mailhog:
-      build: ./mailhog
-      ports:
-        - "1025:1025"
-        - "8025:8025"
-      networks:
-        - frontend
+#    mailhog:
+#      build: ./mailhog
+#      ports:
+#        - "1025:1025"
+#        - "8025:8025"
+#      networks:
+#        - frontend
 
 
 ### Networks Setup ############################################
